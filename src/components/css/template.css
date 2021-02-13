@@ -1,0 +1,131 @@
+/* #body {
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+  }
+  .box {
+    background-color: none;
+  }
+  .card {
+    background-color: black;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 0.8px #ece4e4;
+    -webkit-box-shadow: 0px 0px 10px 0.8px #ece4e4;
+    -moz-box-shadow: 0px 0px 10px 0.8px #ece4e4;
+    height: 380px;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15%;
+    right: 0;
+    top: 0;
+    width: 70%;
+  }
+  
+  .h2 {
+    color: #eef2f5;
+    font-size: 25px;
+    font-weight: 200;
+    margin-top: 120px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    font-family: "heebo", sans-serif;
+  }
+  .p {
+    color: #8f969c;
+    font-size: 20px;
+    margin-top: 180px;
+    position: absolute;
+    text-align: center;
+    font-family: "heebo", sans-serif;
+  }
+  
+  .cS-container {
+    height: 140px;
+    width: 100%;
+    margin-top: 0%;
+  }
+  
+  .button {
+    background-clip: padding-box;
+    margin-top: 300px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background-clip: padding-box;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 400;
+    height: 36px;
+    letter-spacing: 0.5px;
+    line-height: 36px;
+    margin-bottom: 15px;
+    padding: 0 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease-out;
+  }
+  .button1 {
+    color: #f1f3f5;
+    background-image: linear-gradient(to right, #8957f6 0%, #4f3ec8 100%);
+    width: 150px;
+    box-shadow: 0px 0px 10px 0.8px #ece4e4;
+    -webkit-box-shadow: 0px 0px 10px 0.8px #ece4e4;
+    -moz-box-shadow: 0px 0px 10px 0.8px #ece4e4;
+    border: none;
+    font-family: "heebo", sans-serif;
+  }
+  .addtemp {
+    color: #f1f3f5;
+    background-image: linear-gradient(to right, #8957f6 0%, #4f3ec8 100%);
+    width: 150px;
+    box-shadow: 0px 0px 10px 0.8px #ece4e4;
+    -webkit-box-shadow: 0px 0px 10px 0.8px #ece4e4;
+    -moz-box-shadow: 0px 0px 10px 0.8px #ece4e4;
+    border: none;
+    font-size: 20px;
+    height: 35px;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 40px;
+    font-family: "heebo", sans-serif;
+  }
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: #1a1a1a;
+      overflow-x: hidden;
+    }
+    .searchTemplate {
+      width: 100% !important;
+      margin-bottom: 50px !important;
+      margin: 0;
+      padding: 0;
+    }
+    .templateButton {
+      display: block !important;
+    }
+  }
+  
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    color: red;
+    cursor: inherit;
+    display: block;
+  }
+   */

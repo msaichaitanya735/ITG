@@ -1,0 +1,165 @@
+
+.main{
+	height: 600px;
+	width: 350px;
+	background:whitesmoke;
+	box-shadow: 0px 0px 100px rgba(0,0,0,0.2);
+	display:block;
+	margin: auto;
+	margin-top: 60px;
+	border-radius: 40px;
+	border: 15px solid white;
+}
+
+.th6{
+	font-size: 0.7em;
+	font-weight: 800;
+	text-align:center;
+	margin-top: 15px;
+	font-family: sans-serif;
+}
+
+.shipping-info-head{
+	column-count: 2;
+	width: 300px;
+	margin-left:11px;
+}
+
+.shipping-info-head h6{
+	font-size: 12px;
+	font-weight: 200;
+	margin-left: -10px;
+	margin-top: 0px;
+	font-family: 'Teko', sans-serif; 
+}
+
+.shipping-info-head1{
+	column-count: 2;
+	margin-left: 20px;
+	width: 280px;
+}
+
+.shipping-info-head1 .th2{
+	font-size: 20px;
+	font-weight: 600	;
+	margin-left:0px;
+	margin-top: 0px;
+	margin-right: 10px;
+	font-family: 'Teko', sans-serif; 
+}
+.shipping-info-head1 i{
+	font-size: 25px;
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
+.shipping-info-head2{
+	column-count: 2;
+	width: 280px;
+	margin-top: -15px;
+	margin-left: 50px;
+}
+
+.shipping-info-head2 p{
+	font-size: 12px;
+	font-weight: 200;
+	margin-left: 10px;
+	margin-top: 0px;
+	font-family: 'Teko', sans-serif; 
+}
+
+.circle{
+	height: 250px;
+	width:250px;
+	background: #ffb600;
+	display: block;
+	margin: auto;
+	margin-top: 80px;
+	border-radius: 50%;
+}
+
+.th1{
+	position:absolute;
+	margin-top: -260px;
+	margin-lefT: 30px;
+	color: rgba(0,0,0,0.9);
+	font-family: sans-serif;
+}
+.shipping-info-head3{
+	column-count: 2;
+	width: 270px;
+	margin-top: -210px;
+	margin-left: 20px;
+}
+
+.shipping-info-head3 p{
+	font-size: 12px;
+	font-weight: 200;
+	color:rgba(0,0,0,0.7);
+	border-top: 1px solid rgba(0,0,0,0.7);
+	margin-left: 10px;
+	margin-top: 0px;
+	font-family: 'Teko', sans-serif; 
+}
+.shipping-info-head4{
+	column-count: 2;
+	width: 270px;
+	margin-left: 20px;
+}
+
+.shipping-info-head4 p{
+	font-size: 17px;
+	font-weight: 600;
+	margin-left: 10px;
+	margin-top: 0px;
+	font-family: 'Teko', sans-serif; 
+}
+
+.shipping-info-head5{
+	column-count: 2;
+	width: 270px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+.shipping-info-head5 p{
+	font-size: 12px;
+	font-weight: 200;
+	color:rgba(0,0,0,0.7);
+	border-top: 1px solid rgba(0,0,0,0.7);
+	margin-left: 10px;
+	margin-top: 0px;
+	font-family: 'Teko', sans-serif; 
+}
+.shipping-info-head6{
+	column-count: 2;
+	width: 270px;
+	margin-left: 20px;
+}
+
+.shipping-info-head6 p{
+	font-size: 17px;
+	font-weight: 600;
+	margin-left: 10px;
+	margin-top: 0px;
+	font-family: 'Teko', sans-serif; 
+}
+
+.barcode{
+	height: 20px;
+	width: 200px;
+	margin-left: 50px;
+	margin-top: 50px;
+	background-image: url(http://www.pngall.com/wp-content/uploads/2/Barcode-PNG-Photo.png);
+	background-size: cover;
+}
+.fa-align-left{
+	position:absolute;
+	margin-left: 270px;
+	margin-top: 15px;
+}
+.fa-arrow-left{
+	position:absolute;
+	margin-left: 20px;
+	margin-top: 15px;
+}

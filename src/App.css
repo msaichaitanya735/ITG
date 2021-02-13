@@ -5,8 +5,8 @@
 	box-sizing: border-box;
 }
 
-body {
-	background: #f6f5f7;
+.lbody {
+	background: #321e43;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -16,7 +16,7 @@ body {
 	margin: -20px 0 50px;
 }
 
-h1 {
+.lh1 {
 	font-weight: bold;
 	margin: 0;
 }
@@ -25,7 +25,7 @@ h2 {
 	text-align: center;
 }
 
-p {
+.lp {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -37,14 +37,14 @@ span {
 	font-size: 12px;
 }
 
-a {
+.la {
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
 }
 
-button {
+.lbutton {
 	border-radius: 20px;
 	border: 1px solid #FF4B2B;
 	background-color: #FF4B2B;
@@ -57,20 +57,20 @@ button {
 	transition: transform 80ms ease-in;
 }
 
-button:active {
+.lbutton:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.lbutton:focus {
 	outline: none;
 }
 
-button.ghost {
+.lbutton.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
 
-form {
+.lform {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -81,7 +81,7 @@ form {
 	text-align: center;
 }
 
-input {
+.linput {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -100,7 +100,17 @@ input {
 	max-width: 100%;
 	min-height: 480px;
 }
-
+.dcontainer {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 600px;
+	max-width: 100%;
+	min-height: 350px;
+}
 .form-container {
 	position: absolute;
 	top: 0;
@@ -160,9 +170,9 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #5873fe;
+	background: -webkit-linear-gradient(to right, #ce2bff, #5873fe);
+	background: linear-gradient(to right, #ce2bff, #5873fe);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -226,27 +236,3 @@ input {
 	width: 40px;
 }
 
-footer {
-    background-color: #222;
-    color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
-}
-
-footer p {
-    margin: 10px 0;
-}
-
-footer i {
-    color: red;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
-}

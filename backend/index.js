@@ -9,15 +9,44 @@ const pool = require("./db")
 app.use(cors())
 app.use(express.json())
 
-app.post("/add",async(req,res)=>{
+app.post("/register",async(req,res)=>{
     try {
-        const {name}= req.body
-        const newA = await pool.query("INSERT INTO itg_registrations (name) VALUES($1) RETURNING *",[name])
+        const {name,email,mob_no,age}= req.body
+        const newA = await pool.query("INSERT INTO itg_registrations (name,email,mob_no,age) VALUES($1,$2,$3,$4) RETURNING *",[name,email,mob_no,age])
         res.json(newA.rows)
     } catch (err) {
         console.log(err.message)
     }
 })
+
+app.post("/ticket",async(req,res)=>{
+    try {
+        const {name,start,destination, price, token}= req.body
+        const newB = await pool.query("INSERT INTO ticketdata (name,start,destination, fare, token) VALUES($1,$2,$3,$4,$5) RETURNING *",[name,start,destination, price, token])
+        res.json(newB.rows)
+    } catch (err) {
+        console.log(err.message)
+    }
+})
+
+
+app.post('/signin', async(request, response) => {
+    const userReq = request.body
+    let user
+  
+    findUser(userReq)
+      .then((res) => {
+        res.status(200).json(user)
+      })
+      .catch((err) => console.error(err))
+  })
+
+  const findUser = (userReq) => {
+    return database.raw("SELECT * FROM itg_registrations WHERE email = ? && mob_no=?", [userReq.username,userReq.mob_no])
+      .then((data) => data.rows[0])
+  }
+
+
 
 // app.get("/add",async(req,res)=>{
 //     try {
@@ -27,6 +56,14 @@ app.post("/add",async(req,res)=>{
 //         console.log(err.message)
 //     }
 // })
+app.get("/dash", async(req,res)=>{
+    try {
+        const allStops = await pool.query("SELECT * FROM r113 ORDER BY id")
+       res.json(allStops.rows) 
+    } catch (err) {
+        console.error(err.message)
+    }
+})
 
 app.get("/add", async(req,res)=>{
     try {
@@ -36,6 +73,8 @@ app.get("/add", async(req,res)=>{
         console.error(err.message)
     }
 })
+
+
 
 app.get("/add/:mob",async(req,res)=>{
     try {
