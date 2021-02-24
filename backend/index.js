@@ -1,9 +1,12 @@
 const { response } = require('express')
 const express = require('express')
+const router=express.Router()
 const app = express()
 const port = 5000
 const cors =  require("cors");
 const pool = require("./db")
+const PaytmChecksum = require('./PaytmChecksum')
+require('dotenv').config()
 
 
 app.use(cors())
@@ -12,7 +15,9 @@ app.use(express.json())
 app.post("/register",async(req,res)=>{
     try {
         const {name,email,mob_no,age}= req.body
-        const newA = await pool.query("INSERT INTO itg_registrations (name,email,mob_no,age) VALUES($1,$2,$3,$4) RETURNING *",[name,email,mob_no,age])
+        const newA = await pool.query
+        ("INSERT INTO itg_registrations (name,email,mob_no,age) VALUES($1,$2,$3,$4) RETURNING *",
+        [name,email,mob_no,age])
         res.json(newA.rows)
     } catch (err) {
         console.log(err.message)
@@ -22,7 +27,9 @@ app.post("/register",async(req,res)=>{
 app.post("/ticket",async(req,res)=>{
     try {
         const {name,start,destination, price, token}= req.body
-        const newB = await pool.query("INSERT INTO ticketdata (name,start,destination, fare, token) VALUES($1,$2,$3,$4,$5) RETURNING *",[name,start,destination, price, token])
+        const newB = await pool.query
+        ("INSERT INTO ticketdata (name,start,destination, fare, token) VALUES($1,$2,$3,$4,$5) RETURNING *",
+        [name,start,destination, price, token])
         res.json(newB.rows)
     } catch (err) {
         console.log(err.message)
@@ -42,20 +49,12 @@ app.post('/signin', async(request, response) => {
   })
 
   const findUser = (userReq) => {
-    return database.raw("SELECT * FROM itg_registrations WHERE email = ? && mob_no=?", [userReq.username,userReq.mob_no])
+    return database.raw
+    ("SELECT * FROM itg_registrations WHERE email = ? && mob_no=?",
+     [userReq.username,userReq.mob_no])
       .then((data) => data.rows[0])
   }
 
-
-
-// app.get("/add",async(req,res)=>{
-//     try {
-//         const x= await pool.query("SELECT * FROM itg_registrations;")
-//         res.json(x.rows)
-//     } catch (err) {
-//         console.log(err.message)
-//     }
-// })
 app.get("/dash", async(req,res)=>{
     try {
         const allStops = await pool.query("SELECT * FROM r113 ORDER BY id")
@@ -88,50 +87,23 @@ app.get("/add/:mob",async(req,res)=>{
     }
 })
 
+app.get("/payment",(req,res)=>{
+        /* import checksum generation utility */
+var PaytmChecksum = require("./PaytmChecksum");
 
-// const data = require('./db.js')
+var paytmParams = {};
 
-// app.use(express.json())
-// app.use(function(req,res,next){
-//     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-//     res.setHeader('Access_Control-Allow-Methods','GET,POST,PUT,DELETE,OPTIONS');
-//     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers');
-//     next();
-// });
+paytmParams["MID"] = "YOUR_MID_HERE";
+paytmParams["ORDERID"] = "YOUR_ORDER_ID_HERE";
 
-// app.get('/',(req,res)=>{
-//     data.getData()
-//     .then(response=>{
-//         res.status(200).send(response);
-//     })
-//     .catch(error=>{
-//         res.status(500).send(error);
-//     })
-// })
+var paytmChecksum = PaytmChecksum.generateSignature(paytmParams, "YOUR_MERCHANT_KEY");
+paytmChecksum.then(function(checksum){
+	console.log("generateSignature Returns: " + checksum);
+}).catch(function(error){
+	console.log(error);
+});
+})
 
-// app.post('/xyz',(req,res)=>{
-//     data.createUser(req.body)
-//     .then(response=>{
-//         res.status(200).send(response);
-//     })
-//     .catch(error=>{
-//         res.status(500).send(error);
-//     })
-// })
-
-// app.delete('/xyz/:id',(req,res)=>{
-//     data.delUser(req.params.id)
-//     .then(response=>{
-//         res.status(200).send(response);
-//     })
-//     .catch(error=>{
-//         res.status(500).send(error);
-//     })
-// })
-
-// app.listen(port,()=>{
-//     console.log(`App is running on port ${port}.`)
-// })
 
 app.listen(port,()=>{
     console.log(`server is running on the port ${port}`)

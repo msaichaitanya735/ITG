@@ -5,12 +5,8 @@ import { render } from '@testing-library/react';
 
 
 const ConfirmTicket=()=>{
-
   let history = useHistory();
-	const routeChange=()=>{
-		let path=`/ticket`;
-		history.push(path)
-	}
+	
   const start=localStorage.getItem('start')
 	const destination=localStorage.getItem('destination')
 	const name=localStorage.getItem('name')
@@ -89,17 +85,18 @@ const ConfirmTicket=()=>{
 	] 
 	const startdist = bus.find(startdist=>startdist.name===start)
 	const enddist =bus.find(enddist=>enddist.name===destination)
-	console.log(startdist)
-	console.log(enddist)
-	console.log(destination)
+	// console.log(startdist)
+	// console.log(enddist)
+	// console.log(destination)
   const no_of_stops = Math.abs(enddist.id-startdist.id)
-  console.log(no_of_stops)
+//   console.log(no_of_stops)
 	var distance=Math.abs( enddist.dist-startdist.dist)
 	distance= distance.toPrecision(2); 
 	var fare=distance*2.5;
 	if(fare>30){
 		fare=30
 	}
+	localStorage.setItem('fare',fare)
 	var today = new Date();
 	var year = today.getFullYear();
 	var mes = today.getMonth()+1;
@@ -111,12 +108,13 @@ const ConfirmTicket=()=>{
 	var time = (h-12)+":"+m+"pm";
 	else
 	var time=h+":"+m+"am"
-	console.log(time)
-	console.log(fecha);
+	// console.log(time)
+	// console.log(fecha);
 		var minm = 100000000; 
 		var maxm = 999999999; 
 		const token = Math.floor(Math 
 		.random() * (maxm - minm + 1)) + minm; 
+		localStorage.setItem('token',token)
 		console.log(token)
 	const x=distance*4
     var d2 = new Date ( today );
@@ -127,10 +125,12 @@ var dh = d2.getHours();
 	var ft = (dh-12)+":"+dm+"pm";
 	else
 	var ft=dh+":"+dm+"am"
-console.log(d2)
+// console.log(d2)
+const amount=localStorage.getItem('fare')
+console.log(amount)
   const onSubmitForm= async e=>{
     try {
-        const body={name,start,destination, fare, token}
+        const body={name,start,destination,amount,token}
         const response= await fetch("http://localhost:5000/ticket",{
             method:"POST",
             headers:{"Content-Type":"application/json"},

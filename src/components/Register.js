@@ -1,8 +1,6 @@
 import  React,{Fragment,Component,useState} from 'react' 
 import { Link,useHistory } from 'react-router-dom'
 
-import axios from "axios";
-
 const Register=()=>{
     let history = useHistory();
   const [name,setName]=useState("")

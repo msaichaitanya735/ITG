@@ -6,6 +6,7 @@ const Ticket=()=>{
 	const destination=localStorage.getItem('destination')
 	const name=localStorage.getItem('name')
 	const age=localStorage.getItem('age')
+	const token=localStorage.getItem('token')
 	const bus=[
 		{
 			"id": "1",
@@ -85,10 +86,8 @@ const Ticket=()=>{
 	console.log(destination)
 	var distance=Math.abs( enddist.dist-startdist.dist)
 	distance= distance.toPrecision(2); 
-	var fare=distance*2.5;
-	if(fare>30){
-		fare=30
-	}
+	const fare=localStorage.getItem('fare')
+
 	var today = new Date();
 	var year = today.getFullYear();
 	var mes = today.getMonth()+1;
@@ -104,9 +103,7 @@ const Ticket=()=>{
 	console.log(fecha);
 		var minm = 100000000; 
 		var maxm = 999999999; 
-		const token = Math.floor(Math 
-		.random() * (maxm - minm + 1)) + minm; 
-		console.log(token)
+		
 	const x=distance*4
     var d2 = new Date ( today );
 d2.setMinutes ( today.getMinutes() + x );
@@ -117,18 +114,7 @@ var dh = d2.getHours();
 	else
 	var ft=dh+":"+dm+"am"
 console.log(d2)
-	// if(m+x>60){
-	// 	if(h+1>12)
-	//  arrivaltime = (h+1)-12+":"+x-60+"pm"
-	// 	else
-	// 	arrivaltime=h+1+":"+x-60+"am"
-	// }
-	// else{
-	// 	if(h>12)
-	//  arrivaltime= h-12+":"+(m+x)+"pm"
-	// else 
-	// arrivaltime= h+":"+m+x+"am"
-	// }
+
  
 	
     return(
@@ -176,19 +162,14 @@ console.log(d2)
 		<p>{fecha}</p>
 		<p>{token}</p>
 	</div>
-	
-	
-	<div class="shipping-info-head5">
-		<p>Seat</p>
-		<p>Class</p>
-	</div>
-	
-	<div class="shipping-info-head6">
-		<p>17</p>
-		<p>Economy</p>
-	</div>
+<br/>
+<br/>
+<br/>
+
 	<div class="barcode"></div>
 </div>
     )
 }
 export default Ticket;
+
+

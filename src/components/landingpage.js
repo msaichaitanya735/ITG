@@ -9,18 +9,6 @@ const LandingPage=()=>{
 	let history = useHistory();
 
 	const handleSubmit=async e=>{
-		// const result = await fetch('http://localhost:5000/dash');
-        //   const json = await result.json();
-		//   console.log(json)
-		// localStorage.setItem('user',json)
-		// let data= localStorage.getItem('user')
-		// console.log(data)
-		// console.log(json)
-		// const routeChange=()=>{
-		// 	let path=`/dashboard`;
-		// 	history.push(path)
-		// }
-		// routeChange()
 		const m=localStorage.getItem('email')
 		const p=localStorage.getItem('password')
 		console.log(email)
@@ -33,8 +21,6 @@ const LandingPage=()=>{
 		}
 	};
 
-
-	
 	const registerPage=()=>{
 		let path=`/register`;
 		history.push(path)
